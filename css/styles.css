@@ -1,24 +1,36 @@
 :root {
-    /* spacing track */
-    --sys-spacing-track: 0.5em;
-    /* end */
+  /* spacing track */
+  --sys-spacing-track: 0.5em;
+  /* end */
 
-    /* elevation */
-    --sys-elevation-1: 0px 3px 5px rgba(0, 0, 0, 0.02), 0px 0px 2px rgba(0, 0, 0, 0.05), 0px 1px 4px rgba(0, 0, 0, 0.08);
-    --sys-elevation-2: 0px 4px 10px rgba(0, 0, 0, 0.03), 0px 0px 2px rgba(0, 0, 0, 0.06), 0px 2px 6px rgba(0, 0, 0, 0.12);
-    --sys-elevation-3: 0px 1px 8px rgba(0, 0, 0, 0.08), 0px 3px 4px rgba(0, 0, 0, 0.1), 0px 1px 4px -1px rgba(0, 0, 0, 0.1);
-    --sys-elevation-4: 0px 1px 10px rgba(0, 0, 0, 0.12), 0px 4px 5px rgba(0, 0, 0, 0.14), 0px 2px 4px -1px rgba(0, 0, 0, 0.2);
-    --sys-elevation-5: 0px 1px 7px rgba(0, 0, 0, 0.1), 0px 4px 5px -2px rgba(0, 0, 0, 0.12), 0px 10px 15px -5px rgba(0, 0, 0, 0.2);
-    --sys-elevation-6: 0px 3px 5px rgba(0, 0, 0, 0.06), 0px 7px 9px rgba(0, 0, 0, 0.12), 0px 20px 25px -8px rgba(0, 0, 0, 0.18);
-    --sys-elevation-7: 0px 7px 30px rgba(0, 0, 0, 0.08), 0px 22px 30px 2px rgba(0, 0, 0, 0.15), 0px 8px 10px rgba(0, 0, 0, 0.15);
-    /* end */
+  /* elevation */
+  --sys-elevation-1: 0px 3px 5px rgba(0, 0, 0, 0.02),
+    0px 0px 2px rgba(0, 0, 0, 0.05), 0px 1px 4px rgba(0, 0, 0, 0.08);
+  --sys-elevation-2: 0px 4px 10px rgba(0, 0, 0, 0.03),
+    0px 0px 2px rgba(0, 0, 0, 0.06), 0px 2px 6px rgba(0, 0, 0, 0.12);
+  --sys-elevation-3: 0px 1px 8px rgba(0, 0, 0, 0.08),
+    0px 3px 4px rgba(0, 0, 0, 0.1), 0px 1px 4px -1px rgba(0, 0, 0, 0.1);
+  --sys-elevation-4: 0px 1px 10px rgba(0, 0, 0, 0.12),
+    0px 4px 5px rgba(0, 0, 0, 0.14), 0px 2px 4px -1px rgba(0, 0, 0, 0.2);
+  --sys-elevation-5: 0px 1px 7px rgba(0, 0, 0, 0.1),
+    0px 4px 5px -2px rgba(0, 0, 0, 0.12), 0px 10px 15px -5px rgba(0, 0, 0, 0.2);
+  --sys-elevation-6: 0px 3px 5px rgba(0, 0, 0, 0.06),
+    0px 7px 9px rgba(0, 0, 0, 0.12), 0px 20px 25px -8px rgba(0, 0, 0, 0.18);
+  --sys-elevation-7: 0px 7px 30px rgba(0, 0, 0, 0.08),
+    0px 22px 30px 2px rgba(0, 0, 0, 0.15), 0px 8px 10px rgba(0, 0, 0, 0.15);
+  /* end */
 
-    /* radius */
-    --sys-radius-none: 2px;
-    --sys-radius-xsmall: 4px;
-    --sys-radius-small: 8px;
-    --sys-radius-medium: 12px;
-    --sys-radius-large: 16px;
-    --sys-radius-xlarge: 28px;
-    /* end */
+  /* radius */
+  --sys-radius-none: 2px;
+  --sys-radius-xsmall: 4px;
+  --sys-radius-small: 8px;
+  --sys-radius-medium: 12px;
+  --sys-radius-large: 16px;
+  --sys-radius-xlarge: 28px;
+  /* end */
+
+  /* colors */
+  --sys-color-surface: hsl(216, 56%, 98%, 1);
+  --sys-color-primary: hsl(203, 97%, 88%, 1);
+  /* end */
 }
