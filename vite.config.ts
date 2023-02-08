@@ -23,9 +23,9 @@ const manifestJson: Partial<ManifestOptions> = {
   start_url: "/?pwa",
 
   /* info */
-  name: "Spyzer",
-  short_name: "Spyzer",
-  description: "Spy Hunter Game PWA",
+  name: "Lit Todo-List",
+  short_name: "TodoList",
+  description: "Todo-List with Lit library",
 
   /* screen */
   display: "standalone",

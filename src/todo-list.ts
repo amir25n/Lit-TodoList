@@ -28,29 +28,31 @@ export class todoList extends AlwatrDummyElement {
       border-radius: var(--sys-radius-small);
       padding: calc(2 * var(--sys-spacing-track));
       background-color: var(--sys-color-surface);
-      transition: background-color 300ms, box-shadow 300ms;
+      transition: background-color 300ms, box-shadow 300ms, color 300ms;
       margin-top: var(--sys-spacing-track);
       user-select: none;
+      color: var(--sys-color-primary);
     }
 
     .item-todo:hover {
-      background-color: var(--sys-color-primary);
+      background-color: var(--sys-color-primary-60);
       box-shadow: var(--sys-elevation-4);
+      color: black;
     }
 
     .item-todo:active {
-      background-color: var(--sys-color-primary);
+      background-color: var(--sys-color-primary-60);
       box-shadow: var(--sys-elevation-4);
+      color: black;
     }
 
     .item-todo div {
       padding: 0;
-      font-size: 2em;
-    }
-
-    ul {
-      padding: 0;
-      margin: 0;
+      font-family: var(--sys-typescale-body-medium-font-family-name);
+      font-size: var(--sys-typescale-body-medium-font-size);
+      font-weight: var(--sys-typescale-body-medium-font-weight);
+      line-height: var(--sys-typescale-body-medium-line-height);
+      letter-spacing: var(--sys-typescale-body-medium-letter-spacing);
     }
 
     .item-todo input {
@@ -58,6 +60,11 @@ export class todoList extends AlwatrDummyElement {
       width: 2em;
       border-radius: 100%;
       cursor: pointer;
+    }
+
+    ul {
+      padding: 0;
+      margin: 0;
     }
 
     .complated {
@@ -86,6 +93,27 @@ export class todoList extends AlwatrDummyElement {
       justify-content: center;
       gap: 10px;
     }
+
+    .date-box {
+    }
+
+    .date-box div {
+      font-family: var(--sys-typescale-headline-small-font-family-name);
+      font-size: var(--sys-typescale-headline-small-font-size);
+      font-weight: var(--sys-typescale-headline-small-font-weight);
+      line-height: var(--sys-typescale-headline-small-line-height);
+      letter-spacing: var(--sys-typescale-headline-small-letter-spacing);
+      color: var(--sys-color-primary);
+    }
+
+    .date-box div span {
+      font-family: var(--sys-typescale-body-large-font-family-name);
+      font-size: var(--sys-typescale-body-large-font-size);
+      font-weight: var(--sys-typescale-body-large-font-weight);
+      line-height: var(--sys-typescale-body-large-line-height);
+      letter-spacing: var(--sys-typescale-body-large-letter-spacing);
+      color: var(--sys-color-primary-40);
+    }
   `;
   override render() {
     const items: items[] = this.hiddenItem
@@ -111,6 +139,7 @@ export class todoList extends AlwatrDummyElement {
         )}
       </ul>
     `;
+
     const message = html`
       <div class="todo">
         <p>You have nothing to do</p>
@@ -119,9 +148,25 @@ export class todoList extends AlwatrDummyElement {
     `;
     const todosOrMessage = items.length > 0 ? todos : message;
 
-    return html`
-      ${todosOrMessage}
+    const date = new Date();
 
+    const weekday: object = {
+      weekday: "long",
+    };
+
+    const MD: object = {
+      month: "long",
+      day: "numeric",
+    };
+    return html`
+      <div class="date-box">
+        <div>
+          ${date.toLocaleDateString("fa", weekday)}<span
+            >,${date.toLocaleDateString("fa", MD)}</span
+          >
+        </div>
+      </div>
+      ${todosOrMessage}
       <div class="template">
         <input type="text" class="newItem disp" />
         <button @click=${this.addTodo} class="disp">Add</button>

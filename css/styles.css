@@ -1,3 +1,4 @@
+@import url("typography.css");
 :root {
   /* spacing track */
   --sys-spacing-track: 0.5em;
@@ -31,6 +32,8 @@
 
   /* colors */
   --sys-color-surface: hsl(216, 56%, 98%, 1);
-  --sys-color-primary: hsl(203, 97%, 88%, 1);
+  --sys-color-primary-60: hsl(280, 70%, 87%, 1);
+  --sys-color-primary: hsl(279, 70%, 67%, 1);
+  --sys-color-primary-40: hsl(279, 70%, 80%, 1);
   /* end */
 }
