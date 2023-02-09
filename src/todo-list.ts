@@ -20,10 +20,6 @@ export class todoList extends AlwatrDummyElement {
   private hiddenItem: boolean = false;
 
   static override styles = css`
-    body {
-      background-color: gray;
-    }
-
     .item-todo {
       display: flex;
       justify-content: space-between;
@@ -108,6 +104,9 @@ export class todoList extends AlwatrDummyElement {
     .add-box button alwatr-icon:hover {
       color: white;
     }
+    .add-box button alwatr-icon:active {
+      color: white;
+    }
 
     .add-box button {
       border-radius: 50%;
@@ -150,9 +149,21 @@ export class todoList extends AlwatrDummyElement {
       letter-spacing: var(--sys-typescale-body-large-letter-spacing);
       color: var(--sys-color-primary-40);
     }
-
     .check-box {
       color: var(--sys-color-primary);
+    }
+
+    .todo {
+      color: var(--sys-color-primary);
+      display: flex;
+      height: 70vh;
+      justify-content: center;
+      align-items: center;
+      font-family: var(--sys-typescale-display-large-font-family-name);
+      font-size: var(--sys-typescale-display-large-font-size);
+      font-weight: var(--sys-typescale-display-large-font-weight);
+      line-height: var(--sys-typescale-display-large-line-height);
+      letter-spacing: var(--sys-typescale-display-large-letter-spacing);
     }
   `;
   override render() {
