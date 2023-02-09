@@ -20,6 +20,10 @@ export class todoList extends AlwatrDummyElement {
   private hiddenItem: boolean = false;
 
   static override styles = css`
+    body {
+      background-color: gray;
+    }
+
     .item-todo {
       display: flex;
       justify-content: space-between;
@@ -72,47 +76,83 @@ export class todoList extends AlwatrDummyElement {
       text-decoration-line: line-through;
     }
 
-    .todo {
-      display: flex;
-      padding: 8px;
-      justify-content: center;
-    }
-
-    .todo alwatr-icon {
-      font-size: calc(4 * var(--sys-spacing-track));
-      /* font-size: 2em; */
-      margin: 0px 4px 4px 4px;
-    }
-
-    .todo p {
-      margin: 5px;
-    }
-
-    .template {
+    .add-box {
+      background-color: red;
       display: flex;
       justify-content: center;
       gap: 10px;
+      position: fixed;
+      bottom: calc(2 * var(--sys-spacing-track));
+      right: 0px;
+      width: 100%;
+      align-items: center;
+      background-color: transparent;
+    }
+
+    .add-box .newItem {
+      text-align: center;
+      border-radius: var(--sys-radius-xlarge);
+      height: calc(3 * var(--sys-spacing-track));
+      padding: calc(2 * var(--sys-spacing-track));
+      border: none;
+      box-shadow: var(--sys-elevation-4);
+      font-size: 1em;
+    }
+
+    .add-box button alwatr-icon {
+      font-size: 3em;
+      color: var(--sys-color-primary);
+      transitio: color 200ms;
+    }
+
+    .add-box button alwatr-icon:hover {
+      color: white;
+    }
+
+    .add-box button {
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 2px solid var(--sys-color-primary);
+      background-color: white;
+      transition: background-color 300ms, border 300ms;
+    }
+
+    .add-box button:hover {
+      background-color: var(--sys-color-primary);
+      border: 2px solid white;
     }
 
     .date-box {
+      display: flex;
+      justify-content: center;
     }
 
-    .date-box div {
+    .date-box section {
       font-family: var(--sys-typescale-headline-small-font-family-name);
       font-size: var(--sys-typescale-headline-small-font-size);
       font-weight: var(--sys-typescale-headline-small-font-weight);
       line-height: var(--sys-typescale-headline-small-line-height);
       letter-spacing: var(--sys-typescale-headline-small-letter-spacing);
       color: var(--sys-color-primary);
+      margin: 0;
     }
 
-    .date-box div span {
+    .date-box section span {
+      margin: 0;
       font-family: var(--sys-typescale-body-large-font-family-name);
       font-size: var(--sys-typescale-body-large-font-size);
       font-weight: var(--sys-typescale-body-large-font-weight);
       line-height: var(--sys-typescale-body-large-line-height);
       letter-spacing: var(--sys-typescale-body-large-letter-spacing);
       color: var(--sys-color-primary-40);
+    }
+
+    .check-box {
+      color: var(--sys-color-primary);
     }
   `;
   override render() {
@@ -160,17 +200,19 @@ export class todoList extends AlwatrDummyElement {
     };
     return html`
       <div class="date-box">
-        <div>
+        <section>
           ${date.toLocaleDateString("fa", weekday)}<span
             >,${date.toLocaleDateString("fa", MD)}</span
           >
-        </div>
+        </section>
       </div>
       ${todosOrMessage}
-      <div class="template">
-        <input type="text" class="newItem disp" />
-        <button @click=${this.addTodo} class="disp">Add</button>
-        <label class="disp">
+      <div class="add-box">
+        <input type="text" class="newItem " placeholder="Write a new task" />
+        <button>
+          <alwatr-icon name="add" @click=${this.addTodo}>Add</alwatr-icon>
+        </button>
+        <label class="check-box">
           <input type="checkbox" @change=${this.toggleHiddenItem} /> Hide
           complated</label
         >
