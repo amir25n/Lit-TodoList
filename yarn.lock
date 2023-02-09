@@ -2,7 +2,7 @@
 # yarn lockfile v1
 
 
-"@alwatr/element@0.28.0":
+"@alwatr/element@0.28.0", "@alwatr/element@^0.28.0":
   version "0.28.0"
   resolved "https://registry.yarnpkg.com/@alwatr/element/-/element-0.28.0.tgz#538d44658769be85fdc018fcc919b31dc6ba4a20"
   integrity sha512-VT1ihCxyfWh9JFhIfgye1uquL/JuIUDzib0ShkstGHkJSMH76LgBoImXDaNJoAA3Sfi5E6/eW9waMazz1/Ii9w==
@@ -34,6 +34,16 @@
     "@alwatr/fetch" "^0.28.0"
     "@alwatr/logger" "^0.28.0"
     "@alwatr/signal" "^0.28.0"
+    tslib "^2.4.1"
+
+"@alwatr/icon@^0.28.0":
+  version "0.28.0"
+  resolved "https://registry.yarnpkg.com/@alwatr/icon/-/icon-0.28.0.tgz#e3ab64c67db89588605c8e43fb1fe71c8b2954f6"
+  integrity sha512-rLBY3v2YpfMDfFyyQXI+4MfzJVqvxe+Dlo6dSrUtpGUJAXIzRjr0bHAQUvBJuBh4N0syLCUkMOcZpe29FKDg3Q==
+  dependencies:
+    "@alwatr/element" "^0.28.0"
+    "@alwatr/fetch" "^0.28.0"
+    "@alwatr/logger" "^0.28.0"
     tslib "^2.4.1"
 
 "@alwatr/logger@^0.28.0":
